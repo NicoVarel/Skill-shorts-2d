@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8"><title>Hoja de personaje</title>
+<style>body{margin:0;background:#e9e4d8;font:600 22px 'Segoe UI',sans-serif;color:#2a1b2e}canvas{display:block}</style></head>
+<body><canvas id="c"></canvas>
+<script type="module">
+import { drawCharacter, CARD_W, CARD_H, EXPRESSIONS, DEFAULT_POSE } from './js/lib/rig.js';
+import { POSES, makePose } from './js/lib/poses.js';
+const q = new URLSearchParams(location.search);
+const specs = await (await fetch(q.get('chars') || '/project/characters.json')).json();
+const list = Object.entries(specs.characters || specs);
+const poseNames = (q.get('poses') || 'idle,point,surprised,sit,wave,walk1').split(',');
+const exprNames = (q.get('expr') || 'neutral,happy,sad,angry,surprised,sleepy,yawn,smug').split(',');
+const S = 0.55, tw = CARD_W * S, th = CARD_H * S;
+const cols = poseNames.length, rows = list.length;
+const rowH = th + 20, exprH = 190;
+const c = document.getElementById('c');
+c.width = Math.max(cols * tw, exprNames.length * 170) + 20; c.height = rows * (rowH + exprH + 40) + 20;
+const g = c.getContext('2d');
+g.fillStyle = '#e9e4d8'; g.fillRect(0, 0, c.width, c.height);
+const tmp = document.createElement('canvas'); tmp.width = CARD_W * 1.5; tmp.height = CARD_H * 1.5;
+const tg = tmp.getContext('2d');
+let y0 = 10;
+for (const [id, spec] of list) {
+  g.fillStyle = '#2a1b2e'; g.font = '700 26px Segoe UI'; g.fillText(`${id} — ${spec.name || ''}`, 12, y0 + 24);
+  poseNames.forEach((pn, i) => {
+    const pose = makePose(pn, 0.37);
+    tg.clearRect(0, 0, tmp.width, tmp.height);
+    drawCharacter(tg, spec, { pose: pose.pose, face: Object.assign({}, EXPRESSIONS.neutral, EXPRESSIONS[pose.expr || 'neutral']), flip: 1, item: pose.item }, 1.5);
+    g.drawImage(tmp, i * tw, y0 + 30, tw, th);
+    g.font = '600 18px Segoe UI'; g.fillStyle = '#2a1b2e'; g.fillText(pn, i * tw + 8, y0 + 30 + th - 4);
+  });
+  // expresiones: recorte de cabeza
+  exprNames.forEach((en, i) => {
+    const pose = makePose('idle', 0);
+    tg.clearRect(0, 0, tmp.width, tmp.height);
+    drawCharacter(tg, spec, { pose: pose.pose, face: Object.assign({}, EXPRESSIONS.neutral, EXPRESSIONS[en]), flip: 1 }, 1.5);
+    // cabeza: centro aprox (360, 1060-721) *1.5
+    g.drawImage(tmp, 360 * 1.5 - 230, (1060 - 721) * 1.5 - 230, 460, 460, i * 170, y0 + 30 + th + 6, 170, 170);
+    g.font = '600 16px Segoe UI'; g.fillText(en, i * 170 + 6, y0 + 30 + th + 6 + 166);
+  });
+  y0 += rowH + exprH + 40;
+}
+window.__ready = true;
+</script></body></html>

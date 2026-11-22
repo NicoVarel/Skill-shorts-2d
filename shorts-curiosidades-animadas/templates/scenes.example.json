@@ -1,0 +1,255 @@
+{
+ "title": "TÍTULO DE TRABAJO (el definitivo va en 09-final/title-description.md)",
+ "meta": {
+  "fps": 30,
+  "subtitle_upper": true,
+  "voice": {
+   "name": "es-MX-JorgeNeural",
+   "rate": "+10%",
+   "pitch": "+0Hz"
+  },
+  "music": {
+   "mood": "curioso",
+   "level_db": -22,
+   "duck_db": -9,
+   "seed": 3,
+   "bpm": 104
+  }
+ },
+ "scenes": [
+  {
+   "set": {
+    "name": "calle_victoriana",
+    "params": {
+     "houses": 8,
+     "end": "muelles"
+    }
+   },
+   "light": "amanecer",
+   "lightOverrides": {
+    "sun": {
+     "az": 300,
+     "el": 13,
+     "color": "#ffb27a",
+     "i": 2.8
+    }
+   },
+   "id": "s01",
+   "narration": "Esta mujer despertaba a cientos de personas cada mañana *disparando guisantes secos* contra sus ventanas.",
+   "camera": {
+    "segments": [
+     {
+      "t0": 0,
+      "t1": "@end",
+      "target": "char:mary",
+      "az": [
+       26,
+       12
+      ],
+      "dist": [
+       10.8,
+       6.6
+      ],
+      "height": 1.0,
+      "lookY": 0.95,
+      "fov": 48,
+      "creep": 0.0
+     }
+    ]
+   },
+   "characters": [
+    {
+     "id": "mary",
+     "char": "mary",
+     "start": {
+      "at": "anchor:F3.pave|0.9,0,0",
+      "pose": "shoot"
+     },
+     "actions": [
+      {
+       "t": 0.2,
+       "do": "look",
+       "at": "up"
+      },
+      {
+       "t": 0.05,
+       "do": "clip",
+       "name": "puff",
+       "t0": 0.05,
+       "t1": "@end"
+      }
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "type": "peas",
+     "from": "char:mary.mouth",
+     "to": "anchor:F3.w1b",
+     "t0": 0.35,
+     "t1": "@end",
+     "rate": 3.2
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.35,
+     "name": "pea_burst",
+     "vol": 0.8
+    },
+    {
+     "t": 1.5,
+     "name": "glass_tap",
+     "vol": 0.7
+    },
+    {
+     "t": 2.2,
+     "name": "glass_tap",
+     "vol": 0.6
+    },
+    {
+     "t": 3.0,
+     "name": "glass_tap",
+     "vol": 0.7
+    },
+    {
+     "t": 3.7,
+     "name": "pea_burst",
+     "vol": 0.7
+    }
+   ],
+   "ambience": [
+    {
+     "name": "street",
+     "vol": 0.5
+    }
+   ],
+   "transition": {
+    "type": "cut",
+    "dur": 0
+   }
+  },
+  {
+   "id": "s02",
+   "narration": "Su oficio, *knocker-up*, era despertador humano: nació en la Revolución Industrial, cuando los despertadores ni eran baratos ni fiables.",
+   "set": {
+    "name": "habitacion",
+    "params": {
+     "variant": "dormitorio",
+     "exterior": "amanecer",
+     "alarmClock": true,
+     "winX": 1.6
+    }
+   },
+   "light": "interior_amanecer",
+   "lightOverrides": {
+    "sun": {
+     "az": 200,
+     "el": 18,
+     "color": "#ffbb82",
+     "i": 2.4
+    }
+   },
+   "camera": {
+    "segments": [
+     {
+      "t0": 0,
+      "t1": "@end",
+      "from": {
+       "pos": [
+        -0.9,
+        1.4,
+        3.0
+       ],
+       "look": [
+        -2.6,
+        0.85,
+        -1.8
+       ],
+       "fov": 36
+      },
+      "to": {
+       "pos": [
+        0.7,
+        1.8,
+        5.6
+       ],
+       "look": [
+        -1.6,
+        0.75,
+        -1.2
+       ],
+       "fov": 46
+      },
+      "ease": "smooth",
+      "creep": 0.0
+     }
+    ]
+   },
+   "characters": [
+    {
+     "id": "durmiente",
+     "char": "durmiente",
+     "start": {
+      "at": [
+       -1.85,
+       0.3,
+       -1.25
+      ],
+      "pose": "sleep",
+      "expr": "sleep"
+     },
+     "actions": [
+      {
+       "t": 0,
+       "do": "lie",
+       "angle": -84,
+       "dur": 0.01
+      },
+      {
+       "t": 0,
+       "do": "clip",
+       "name": "breathe",
+       "t0": 0,
+       "t1": "@end"
+      }
+     ]
+    }
+   ],
+   "fx": [
+    {
+     "type": "zzz",
+     "at": "anchor:bed.head|0.5,0.35,0.1",
+     "t0": 0.2,
+     "t1": "@end"
+    }
+   ],
+   "chips": [
+    {
+     "t0": "@w2",
+     "t1": "@w5e+0.9",
+     "text": "KNOCKER-UP",
+     "sub": "«despertador humano»",
+     "y": 0.14
+    }
+   ],
+   "sfx": [
+    {
+     "t": 0.6,
+     "name": "alarm_bell",
+     "vol": 0.7
+    },
+    {
+     "t": 3.3,
+     "name": "snore",
+     "vol": 0.6
+    }
+   ],
+   "transition": {
+    "type": "whip",
+    "dur": 0.3,
+    "dir": 1
+   }
+  }
+ ]
+}

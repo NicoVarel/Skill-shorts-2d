@@ -1,0 +1,224 @@
+{
+ "characters": {
+  "mary": {
+   "name": "Mary Smith (representación estilizada)",
+   "skin": "#f2cba6",
+   "hair": {
+    "style": "bun",
+    "color": "#a3a3ab"
+   },
+   "outfit": {
+    "top": {
+     "type": "dress",
+     "color": "#3f5280",
+     "sleeve": "#3f5280",
+     "trim": "#2b3556"
+    },
+    "apron": "#f1ebdd",
+    "accessories": [
+     "apron"
+    ],
+    "hat": {
+     "type": "shawl",
+     "color": "#8a3f3f"
+    },
+    "shoes": {
+     "color": "#2d2320"
+    },
+    "stockings": "#d9d0c2"
+   },
+   "face": {
+    "nose": "round"
+   },
+   "body": {
+    "height": 0.96
+   }
+  },
+  "molly": {
+   "name": "Molly Moore (representación estilizada)",
+   "skin": "#f4d0ad",
+   "hair": {
+    "style": "bun",
+    "color": "#4a2c1a"
+   },
+   "outfit": {
+    "top": {
+     "type": "dress",
+     "color": "#3f7a5f",
+     "sleeve": "#3f7a5f",
+     "trim": "#2b5a45"
+    },
+    "apron": "#efe6d6",
+    "accessories": [
+     "apron"
+    ],
+    "hat": {
+     "type": "shawl",
+     "color": "#d8b45a"
+    },
+    "shoes": {
+     "color": "#2d2320"
+    },
+    "stockings": "#d9d0c2"
+   },
+   "face": {
+    "nose": "round",
+    "freckles": true
+   },
+   "body": {
+    "height": 0.98
+   }
+  },
+  "pole_man": {
+   "name": "Despertador del palo (genérico)",
+   "skin": "#e7b48c",
+   "hair": {
+    "style": "short",
+    "color": "#6b6b70"
+   },
+   "outfit": {
+    "top": {
+     "type": "coat",
+     "color": "#6b5a3e",
+     "sleeve": "#6b5a3e",
+     "buttons": "#d8c38a",
+     "belt": "#3a2a1e"
+    },
+    "bottom": {
+     "type": "trousers",
+     "color": "#3a3f4d"
+    },
+    "hat": {
+     "type": "bowler",
+     "color": "#3b3b44",
+     "band": "#222"
+    },
+    "accessories": [
+     "mustache"
+    ],
+    "shoes": {
+     "color": "#2b2220"
+    }
+   },
+   "face": {
+    "nose": "pointy"
+   },
+   "body": {
+    "height": 1.04
+   }
+  },
+  "obrero": {
+   "name": "Trabajador (genérico)",
+   "skin": "#e9b890",
+   "hair": {
+    "style": "short",
+    "color": "#4a2c1a"
+   },
+   "outfit": {
+    "top": {
+     "type": "jacket",
+     "color": "#6e7a5a",
+     "sleeve": "#6e7a5a",
+     "buttons": "#d8c38a",
+     "vest": true,
+     "shirt": "#eee6d0"
+    },
+    "bottom": {
+     "type": "trousers",
+     "color": "#3a3f4d"
+    },
+    "hat": {
+     "type": "flatcap",
+     "color": "#4b4f5a"
+    },
+    "accessories": [
+     "scarf"
+    ],
+    "scarf": "#b4423a",
+    "shoes": {
+     "color": "#2b2220"
+    }
+   },
+   "face": {
+    "nose": "round"
+   },
+   "body": {
+    "height": 1.0
+   }
+  },
+  "durmiente": {
+   "name": "Trabajador dormido (genérico)",
+   "skin": "#e9b890",
+   "hair": {
+    "style": "short",
+    "color": "#4a2c1a"
+   },
+   "outfit": {
+    "top": {
+     "type": "robe",
+     "color": "#e6dfcf",
+     "sleeve": "#e6dfcf",
+     "trim": "#c9bfa8"
+    },
+    "bottom": {
+     "type": "trousers",
+     "color": "#e6dfcf"
+    },
+    "hat": {
+     "type": "nightcap",
+     "color": "#c8553d",
+     "band": "#f3ead5"
+    },
+    "accessories": [
+     "mustache"
+    ],
+    "shoes": {
+     "color": "#8a6a4a"
+    }
+   },
+   "face": {
+    "nose": "round"
+   },
+   "body": {
+    "height": 1.0
+   }
+  },
+  "policia": {
+   "name": "Agente de policía (genérico)",
+   "skin": "#f0c4a0",
+   "hair": {
+    "style": "short",
+    "color": "#2a2a2a"
+   },
+   "outfit": {
+    "top": {
+     "type": "coat",
+     "color": "#26304f",
+     "sleeve": "#26304f",
+     "buttons": "#e0c35a",
+     "belt": "#1b1b22"
+    },
+    "bottom": {
+     "type": "trousers",
+     "color": "#1f2640"
+    },
+    "hat": {
+     "type": "helmet",
+     "color": "#22283f"
+    },
+    "accessories": [
+     "mustache"
+    ],
+    "shoes": {
+     "color": "#151215"
+    }
+   },
+   "face": {
+    "nose": "round"
+   },
+   "body": {
+    "height": 1.06
+   }
+  }
+ }
+}
